@@ -1,9 +1,25 @@
 {
   "Authors": [
-    {"name": "Shoppen", "biography": "Author"},
-    {"name": "Karl", "biography": "German"}
+    {
+      "name": "Karl",
+      "biography": "German"
+    },
+    {
+      "name": "Vlad Todorchuk",
+      "biography": "Ukr-poet"
+    },
+    {
+      "name": "Rey BredBery",
+      "biography": "American author"
+    }
   ],
-  "Books": [],
-  "Orders": [],
-  "Readers": []
+  "Books": [
+
+  ],
+  "Orders": [
+
+  ],
+  "Readers": [
+
+  ]
 }
