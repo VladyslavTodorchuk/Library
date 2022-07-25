@@ -1,4 +1,4 @@
-require 'Person'
+require_relative  'Person'
 
 class Reader < Person
   attr_accessor :email, :city, :street, :house

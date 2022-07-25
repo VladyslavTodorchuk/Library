@@ -1,4 +1,4 @@
-require 'Person'
+require_relative  'Person'
 
 class Author < Person
   attr_accessor :biography

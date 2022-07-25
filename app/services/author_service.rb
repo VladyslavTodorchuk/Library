@@ -1,5 +1,4 @@
-require '../entity/Author'
-require 'json'
+require './entity/Author'
 
 module AuthorService
 
