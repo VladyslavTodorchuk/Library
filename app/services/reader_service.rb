@@ -1,4 +1,4 @@
-require './entity/entities'
+require '../entity/Reader'
 require 'json'
 
 module ReaderService
