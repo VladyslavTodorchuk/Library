@@ -1,15 +1,14 @@
-require_relative  'Person'
 
-class Author < Person
-  attr_accessor :biography
+class Author
+  attr_accessor :name, :biography
 
   def initialize(name, biography)
-    super(name)
+    @name = name
     @biography = biography
   end
 
   def to_s
-    puts "Name: #{@name} Biography: #{@biography}"
+    "Name: #{@name} Biography: #{@biography}"
   end
 end
 

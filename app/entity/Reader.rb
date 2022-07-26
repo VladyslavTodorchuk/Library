@@ -1,10 +1,9 @@
-require_relative  'Person'
 
-class Reader < Person
-  attr_accessor :email, :city, :street, :house
+class Reader
+  attr_accessor :name ,:email, :city, :street, :house
 
   def initialize(name, email, city, street, house)
-    super name
+    @name = name
     @email = email
     @city = city
     @street = street
