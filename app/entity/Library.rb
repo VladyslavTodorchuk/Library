@@ -15,7 +15,7 @@ class Library
     puts "  Author         Book                       Reader          Order       Statistics"
     puts "1) Add         1) Add                     1) Add          1) Add      1) Statistics"
     puts "2) Show        2) Show                    2) Show         2) Show"
-    puts "3) Show Books  3) Show popular                                     "
+    puts "3) Show Books                                       "
     puts "4) Delete      4) Delete                  4) Delete       4) Delete"
 
   end

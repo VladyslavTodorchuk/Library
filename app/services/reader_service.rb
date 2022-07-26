@@ -3,22 +3,20 @@ require './entity/Reader'
 module ReaderService
 
   def ReaderService.add(lib)
-    puts "\n\tAdd Reader"
     print "Enter Name: "
     name = gets.chomp.strip
-
     print "Enter Email: "
     email = gets.chomp.strip
-
     print "Enter City: "
     city = gets.chomp.strip
-
     print "Enter Street: "
     street = gets.chomp.strip
-
     print "Enter House: "
     house = gets.chomp.to_i
-
+    if name == "" || email == "" || city == "" || street == "" || house < 0
+      puts "\n!- Fields can not be empty"
+      return
+    end
     reader = Reader.new name, email, city, street, house
     if (lib.readers.select {|r| r.email == reader.email}).length == 0
       lib.readers << reader
@@ -26,11 +24,9 @@ module ReaderService
     else
       puts "\n!- Reader, is already exits"
     end
-
   end
 
   def ReaderService.show(lib)
-    puts "\n\t Readers"
     readers = lib.readers
     readers.each do |reader|
       puts reader.to_s
@@ -38,7 +34,6 @@ module ReaderService
   end
 
   def ReaderService.delete(lib)
-    puts "\n\tDelete Reader"
     print "Enter email: "
     email = gets.chomp.strip
 
@@ -55,7 +50,6 @@ module ReaderService
   end
 
   def ReaderService.show_books(lib)
-    puts "\n\tOrders"
     print "Enter email: "
     email = gets.chomp.strip
 
@@ -64,17 +58,14 @@ module ReaderService
     end
   end
 
-  def ReaderService.top_reader(lib)
-
-    reader_hash = Hash.new(0)
-    lib.orders.each {|order| reader_hash[order.reader] += 1}
-    if reader_hash.length == 0
-      puts "There is no finner yet"
-    else
-      reader = reader_hash.max_by { |_reader, number| number}[0]
-      puts "The reader with the most books is #{reader.name} with #{reader_hash[reader]} books"
+  def ReaderService.top_reader(lib, top_books, top_count = 1)
+    top_books.each do |book, _v|
+      array = lib.orders.select {|order| order.book == book}.first top_count
+      puts book.to_s
+      array.each do |e|
+        puts "\t |#{e.reader.name} #{e.reader.email}"
+      end
     end
-
   end
 
 end

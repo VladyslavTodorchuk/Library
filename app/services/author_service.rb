@@ -3,11 +3,15 @@ require './entity/Author'
 module AuthorService
 
   def AuthorService.add(lib)
-    puts "\n\tAdd Author"
     print "Enter name: "
     name = gets.chomp.strip
     print "Enter biography: "
     bio = gets.chomp.strip
+
+    if name == ""
+      puts "\n!- Fields can not be empty"
+      return
+    end
 
     author = Author.new name, bio
     if (lib.authors.select {|a| a.name == author.name}).length == 0
@@ -19,7 +23,6 @@ module AuthorService
   end
 
   def AuthorService.show(lib)
-    puts "\n\t Authors"
     authors = lib.authors
     authors.each do |author|
       puts author.to_s
@@ -27,7 +30,6 @@ module AuthorService
   end
 
   def AuthorService.delete(lib)
-    puts "\n\tDelete Author"
     print "Enter name: "
     name = gets.chomp.strip
 
@@ -39,7 +41,6 @@ module AuthorService
   end
 
   def AuthorService.show_books(lib)
-    puts "\n\tShow Author`s books"
     print "Enter name: "
     name = gets.chomp.strip
 

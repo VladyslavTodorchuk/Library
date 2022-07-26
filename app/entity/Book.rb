@@ -9,5 +9,13 @@ class Book
   def to_s
     "Title: #{@title} Author: #{@author.name}"
   end
+
+  def ==(other)
+    if other.nil? || !other.instance_of?(Book)
+      false
+    else
+      @title == other.title && @author == other.author
+    end
+  end
 end
 
