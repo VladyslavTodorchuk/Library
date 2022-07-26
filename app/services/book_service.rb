@@ -46,7 +46,7 @@ module BookService
     end
   end
 
-  def BookService.show_most_popular_book(lib, top_count = 3)
+  def BookService.top_popular_book(lib, top_count = 3)
     books_hash = Hash.new(0)
     lib.orders.each {|order| books_hash[order.book] += 1}
 
