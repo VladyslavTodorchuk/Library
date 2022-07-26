@@ -58,7 +58,7 @@ module ReaderService
     end
   end
 
-  def ReaderService.top_reader(lib, top_books, top_count = 1)
+  def ReaderService.reader(lib, top_books, top_count = 1)
     top_books.each do |book, _v|
       orders = lib.orders.select {|order| order.book == book}.first top_count
       puts book.to_s
@@ -68,6 +68,14 @@ module ReaderService
         tmp = orders[0].reader
       end
     end
+  end
+
+  def ReaderService.most_popular_book(lib, top_count = 1)
+    readers_hash = Hash.new(0)
+
+    lib.orders.each {|order| readers_hash[order.reader] += 1}
+
+    readers_hash.first top_count
   end
 
 end

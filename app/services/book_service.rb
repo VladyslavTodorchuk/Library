@@ -57,6 +57,4 @@ module BookService
     end
   end
 
-
-
 end

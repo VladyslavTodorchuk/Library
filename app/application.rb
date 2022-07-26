@@ -97,7 +97,14 @@ while isExit != true
     puts "\n\tStatistics"
 
     top_book = BookService::show_most_popular_book library
-    ReaderService.top_reader library, top_book
+    ReaderService::reader library, top_book
+
+    readers_hash = ReaderService::most_popular_book library
+
+    puts "\n\tMost Popular Reader"
+    readers_hash.each do |reader,_value|
+      puts "| #{reader.name}, #{reader.email}"
+    end
     gets
   when "exit"
     LibraryService::save library
