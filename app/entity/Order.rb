@@ -6,5 +6,9 @@ class Order
     @reader = reader
     @date = date
   end
+
+  def to_s
+    "|Order| Book: #{@book.title} Reader: #{@reader.name} '#{@reader.email}' #{@date}"
+  end
 end
 

@@ -9,24 +9,31 @@ class Library
 
   attr_accessor :authors, :books, :readers, :orders
 
-  def find_top_reader
-  end
-
-  def find_most_popular_book
-  end
-
-  def get_number_of_readers_of_most_popular_book
-  end
-
-  def self.print_instruction
+  def print_instruction
 
     puts "(Write command by typing <entity, command>) \n Chose action:"
-    puts "  Author         Book                       Reader          Order"
-    puts "1) Add         1) Add                     1) Add          1) Add"
+    puts "  Author         Book                       Reader          Order       Statistics"
+    puts "1) Add         1) Add                     1) Add          1) Add      1) Statistics"
     puts "2) Show        2) Show                    2) Show         2) Show"
-    puts "3) Show Books  3) Show popular            3) Show Books"
+    puts "3) Show Books  3) Show popular                                     "
     puts "4) Delete      4) Delete                  4) Delete       4) Delete"
 
   end
+
+  def print_statistics
+    book = find_most_popular_book
+    puts "\t\nStatistics\n Most popular book is #{book[0]} count of readers: #{book[1]}"
+  end
+
+  def find_most_popular_book
+    books_hash = {}
+    @orders.each do |order|
+      books_hash[order.book] += 1
+    end
+    book = books_hash.max_by { |_k, v| v }.first
+    count_of_readers = books_hash[book]
+    [book, count_of_readers]
+  end
+
 end
 

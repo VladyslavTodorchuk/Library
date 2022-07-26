@@ -9,5 +9,9 @@ class Reader
     @street = street
     @house = house
   end
+
+  def to_s
+    "Name: #{@name} Email: #{@email} City: #{@city} Street: #{@street} House: #{@house}"
+  end
 end
 
