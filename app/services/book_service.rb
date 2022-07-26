@@ -51,7 +51,7 @@ module BookService
     lib.orders.each {|order| books_hash[order.book] += 1}
 
     unless books_hash.length == 0
-      books_hash.sort_by { |_book,number| number}.first top_count
+      books_hash.sort_by { |_book,number| -number}.first top_count
     else
       false
     end

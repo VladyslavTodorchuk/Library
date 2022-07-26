@@ -98,7 +98,7 @@ while isExit != true
 
     puts "\n\tTop Books"
     top_book = BookService::top_popular_book library
-    ReaderService::reader library, top_book
+    ReaderService::reader library, top_book, 2
 
     readers_hash = ReaderService::most_popular_book library
 
