@@ -103,8 +103,8 @@ while isExit != true
     readers_hash = ReaderService::most_popular_book library
 
     puts "\n\tMost Popular Reader"
-    readers_hash.each do |reader,_value|
-      puts "| #{reader.name}, #{reader.email}"
+    readers_hash.each do |reader, value|
+      puts "| #{reader.name}, #{reader.email} with #{value} books"
     end
 
     books = BookService::top_popular_book library, 1

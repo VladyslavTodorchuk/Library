@@ -1,0 +1,562 @@
+--- !ruby/object:Library
+authors:
+- &1 !ruby/object:Author
+  name: Leontine Smitham
+  bio: Biography
+- &2 !ruby/object:Author
+  name: Sherri Wyman
+  bio: Biography
+- &3 !ruby/object:Author
+  name: Edith Jast
+  bio: Biography
+- &4 !ruby/object:Author
+  name: Doreatha Waters
+  bio: Biography
+- &5 !ruby/object:Author
+  name: Dinah Senger
+  bio: Biography
+- &6 !ruby/object:Author
+  name: Marget Howe
+  bio: Biography
+- &7 !ruby/object:Author
+  name: Keena Rosenbaum
+  bio: Biography
+- &8 !ruby/object:Author
+  name: Felipe Brekke
+  bio: Biography
+- &9 !ruby/object:Author
+  name: Issac Christiansen
+  bio: Biography
+- &10 !ruby/object:Author
+  name: Kasi Runolfsson
+  bio: Biography
+- &11 !ruby/object:Author
+  name: Hideo Kojima
+  bio: A God, a genius and just a good guy
+- &12 !ruby/object:Author
+  name: Albert Einstein
+  bio: Your school teacher
+- &13 !ruby/object:Author
+  name: Hideo Kojima
+  bio: A God, a genius and just a good guy
+- &14 !ruby/object:Author
+  name: Albert Einstein
+  bio: Your school teacher
+- &15 !ruby/object:Author
+  name: Hideo Kojima
+  bio: A God, a genius and just a good guy
+- &16 !ruby/object:Author
+  name: Albert Einstein
+  bio: Your school teacher
+books:
+- &17 !ruby/object:Book
+  title: Killer Rain
+  author: *1
+- &52 !ruby/object:Book
+  title: Bloody Man
+  author: *2
+- &60 !ruby/object:Book
+  title: Red World
+  author: *3
+- &38 !ruby/object:Book
+  title: Action Hills
+  author: *4
+- &55 !ruby/object:Book
+  title: Green Brains
+  author: *5
+- &29 !ruby/object:Book
+  title: Time of the Nuclear Ninja
+  author: *6
+- &46 !ruby/object:Book
+  title: Ultra Jungle
+  author: *7
+- &41 !ruby/object:Book
+  title: Hungry Women
+  author: *8
+- &25 !ruby/object:Book
+  title: Killer Demon
+  author: *9
+- &48 !ruby/object:Book
+  title: Rise of the Hungry Wolf
+  author: *10
+- &40 !ruby/object:Book
+  title: Nuclear Tentacle
+  author: *1
+- &42 !ruby/object:Book
+  title: Tokyo Rain
+  author: *2
+- &23 !ruby/object:Book
+  title: Danger Blow
+  author: *3
+- &33 !ruby/object:Book
+  title: Rise of the Danger Clash
+  author: *4
+- &32 !ruby/object:Book
+  title: Hungry City
+  author: *5
+- &19 !ruby/object:Book
+  title: Red Witch
+  author: *6
+- !ruby/object:Book
+  title: Planet of the American Friday
+  author: *7
+- &21 !ruby/object:Book
+  title: Flying Witch
+  author: *8
+- &27 !ruby/object:Book
+  title: Action Wizard
+  author: *9
+- &36 !ruby/object:Book
+  title: Journey of the Flying Gypsy
+  author: *10
+- &58 !ruby/object:Book
+  title: Rise of the Action Mutant
+  author: *1
+- &50 !ruby/object:Book
+  title: The Killer Friday
+  author: *2
+- &62 !ruby/object:Book
+  title: Curse of the Red Ninja
+  author: *3
+- !ruby/object:Book
+  title: Fake Witch
+  author: *4
+- &66 !ruby/object:Book
+  title: Action Diaries
+  author: *5
+- !ruby/object:Book
+  title: How to become a genius
+  author: *11
+- !ruby/object:Book
+  title: Ruby on Rails for dummies
+  author: *12
+- !ruby/object:Book
+  title: How to become a genius
+  author: *13
+- !ruby/object:Book
+  title: Ruby on Rails for dummies
+  author: *14
+- !ruby/object:Book
+  title: How to become a genius
+  author: *15
+- !ruby/object:Book
+  title: Ruby on Rails for dummies
+  author: *16
+readers:
+- &35 !ruby/object:Reader
+  name: Elida Wyman
+  email: danyel.senger@romaguera.info
+  city: Clemenciashire
+  street: Helena Coves
+  house: 37
+- &22 !ruby/object:Reader
+  name: Noma Bechtelar
+  email: delphia@dicki.com
+  city: North Angelicaborough
+  street: Kemmer Lane
+  house: 22
+- &18 !ruby/object:Reader
+  name: Fatimah Stamm
+  email: alonso@kessler.co.uk
+  city: Elidiaport
+  street: Kozey Mews
+  house: 10
+- &45 !ruby/object:Reader
+  name: Lashandra DuBuque
+  email: lindsay_skiles@littel.co.uk
+  city: Dooleyfurt
+  street: Batz Lodge
+  house: 25
+- &28 !ruby/object:Reader
+  name: Mario Paucek
+  email: kandis_satterfield@murrayschowalter.us
+  city: Lake Shena
+  street: Rodriguez Neck
+  house: 10
+- &34 !ruby/object:Reader
+  name: Raguel Wilderman
+  email: dena@harvey.biz
+  city: Port Valencia
+  street: Dickinson Knolls
+  house: 22
+- &64 !ruby/object:Reader
+  name: Jorge Vandervort
+  email: renea@lebsackmohr.us
+  city: New Celestine
+  street: Kshlerin Extensions
+  house: 33
+- &65 !ruby/object:Reader
+  name: Lou Labadie
+  email: tamela.franecki@ward.us
+  city: East Dorethafort
+  street: Mertz Dam
+  house: 35
+- &57 !ruby/object:Reader
+  name: Nellie Turcotte
+  email: angelena@feest.ca
+  city: Port Graham
+  street: Blanda Crest
+  house: 16
+- &63 !ruby/object:Reader
+  name: Kristian Windler
+  email: zana_pfannerstill@wildermanrowe.biz
+  city: North Margton
+  street: Vivian Alley
+  house: 39
+- &44 !ruby/object:Reader
+  name: Gilbert Larkin
+  email: luciana.senger@champlinflatley.ca
+  city: Keshiaton
+  street: Olimpia Bridge
+  house: 1
+- &30 !ruby/object:Reader
+  name: Charlie Kuhic
+  email: dawna@greenfelder.us
+  city: Burmaville
+  street: Oberbrunner Ferry
+  house: 39
+- !ruby/object:Reader
+  name: Laila Leannon
+  email: shizuko_hoppe@morissette.co.uk
+  city: Walterchester
+  street: Ronald Glen
+  house: 31
+- &39 !ruby/object:Reader
+  name: Thaddeus Schinner
+  email: barrie.schimmel@klingjacobi.info
+  city: Allieport
+  street: Effertz Brook
+  house: 2
+- !ruby/object:Reader
+  name: Jeneva Von
+  email: theodora@gleason.biz
+  city: Framiville
+  street: Philip Dam
+  house: 17
+- &56 !ruby/object:Reader
+  name: Lachelle Lemke
+  email: burton.kautzer@mante.ca
+  city: East Ellsworth
+  street: Catherine Fall
+  house: 6
+- &24 !ruby/object:Reader
+  name: Joanie Murphy
+  email: belen_gulgowski@deckowgulgowski.ca
+  city: Sauerborough
+  street: Micheal Mall
+  house: 8
+- &37 !ruby/object:Reader
+  name: Marchelle Haag
+  email: marx@boehm.ca
+  city: Windlerside
+  street: Hulda Forges
+  house: 5
+- &20 !ruby/object:Reader
+  name: Maryanna Wisoky
+  email: maryjo.koepp@mohr.co.uk
+  city: Myview
+  street: Ward Ramp
+  house: 4
+- &26 !ruby/object:Reader
+  name: Lela Morissette
+  email: fidelia@cartwright.co.uk
+  city: Brendastad
+  street: Nienow Rapid
+  house: 6
+- &49 !ruby/object:Reader
+  name: Karen Senger
+  email: sharleen_trantow@feestrenner.name
+  city: Lake Alejandraview
+  street: Kathey Wells
+  house: 41
+- &61 !ruby/object:Reader
+  name: Daisey Trantow
+  email: everett_vandervort@morissette.co.uk
+  city: Moenmouth
+  street: Wunsch Coves
+  house: 14
+- &51 !ruby/object:Reader
+  name: Norma Dibbert
+  email: calandra.metz@toy.com
+  city: New Frankie
+  street: Eric Loop
+  house: 38
+- !ruby/object:Reader
+  name: Rico Lindgren
+  email: harriette@kubfahey.us
+  city: Merrillview
+  street: Lizbeth Tunnel
+  house: 5
+- !ruby/object:Reader
+  name: Reynaldo Lehner
+  email: crista.ziemann@spinka.info
+  city: Morarchester
+  street: Bauch Creek
+  house: 6
+- !ruby/object:Reader
+  name: Randal Leannon
+  email: dominga@ledner.info
+  city: Blancachester
+  street: Schultz Glens
+  house: 30
+- &47 !ruby/object:Reader
+  name: Daniela Crooks
+  email: benito.herman@johnszboncak.co.uk
+  city: Liseville
+  street: Pam Neck
+  house: 42
+- !ruby/object:Reader
+  name: Rubie Murazik
+  email: rosalia_mayer@grahampurdy.com
+  city: Port Kira
+  street: Kessler Island
+  house: 34
+- &54 !ruby/object:Reader
+  name: Guadalupe Maggio
+  email: dayna@williamson.name
+  city: Hoegershire
+  street: Jen Avenue
+  house: 38
+- !ruby/object:Reader
+  name: Julietta Ullrich
+  email: gisele.lueilwitz@moorewolf.us
+  city: Vannaville
+  street: Evie Bypass
+  house: 5
+- !ruby/object:Reader
+  name: Charlena Luettgen
+  email: epifania_donnelly@shieldsheller.com
+  city: West Jenette
+  street: Bunny Spring
+  house: 24
+- &43 !ruby/object:Reader
+  name: Karmen Schroeder
+  email: ruthie_hoeger@cremin.us
+  city: South Marylynnstad
+  street: Chester Rapid
+  house: 17
+- &59 !ruby/object:Reader
+  name: Ollie Kulas
+  email: melissia_harris@kunze.us
+  city: Bartellshire
+  street: Rogahn Roads
+  house: 37
+- &53 !ruby/object:Reader
+  name: Ahmed Schinner
+  email: carolin@bruen.us
+  city: New Kristi
+  street: Scottie Port
+  house: 10
+- &31 !ruby/object:Reader
+  name: Leighann Blanda
+  email: celestine@krajcik.com
+  city: Mannshire
+  street: Lilian River
+  house: 11
+- !ruby/object:Reader
+  name: Vlad Todorchuk
+  email: vladik.todorchuk@gmail.com
+  city: Lviv
+  street: Lubincks
+  house: 40
+orders:
+- !ruby/object:Order
+  book: *17
+  reader: *18
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *19
+  reader: *20
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *21
+  reader: *18
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *21
+  reader: *22
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *23
+  reader: *24
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *25
+  reader: *26
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *27
+  reader: *28
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *29
+  reader: *30
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *19
+  reader: *31
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *32
+  reader: *24
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *33
+  reader: *34
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *27
+  reader: *35
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *27
+  reader: *22
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *36
+  reader: *28
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *17
+  reader: *37
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *38
+  reader: *39
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *40
+  reader: *20
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *41
+  reader: *20
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *42
+  reader: *24
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *33
+  reader: *43
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *25
+  reader: *44
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *21
+  reader: *45
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *46
+  reader: *47
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *48
+  reader: *49
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *50
+  reader: *51
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *52
+  reader: *53
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *25
+  reader: *31
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *46
+  reader: *54
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *46
+  reader: *34
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *55
+  reader: *26
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *52
+  reader: *56
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *29
+  reader: *35
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *40
+  reader: *57
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *58
+  reader: *59
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *32
+  reader: *35
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *48
+  reader: *37
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *52
+  reader: *39
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *41
+  reader: *28
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *60
+  reader: *54
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *48
+  reader: *61
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *62
+  reader: *63
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *33
+  reader: *64
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *40
+  reader: *65
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *46
+  reader: *24
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *46
+  reader: *61
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *17
+  reader: *18
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *36
+  reader: *22
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *66
+  reader: *28
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *62
+  reader: *26
+  date: 2019-05-29
+- !ruby/object:Order
+  book: *25
+  reader: *63
+  date: 2019-05-29

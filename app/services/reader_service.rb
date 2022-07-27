@@ -62,10 +62,8 @@ module ReaderService
     top_books.each do |book, _v|
       orders = lib.orders.select {|order| order.book == book}.first top_count
       puts book.to_s
-      tmp = nil
       orders.each do |e|
-        puts "\t |#{e.reader.name} #{e.reader.email}" unless !tmp.nil? && tmp.email == e.reader.email
-        tmp = orders[0].reader
+        puts "\t |#{e.reader.name} #{e.reader.email}"
       end
     end
   end
