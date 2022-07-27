@@ -1,47 +1,47 @@
-require './entity/Author'
+require './entity/author'
 
 module AuthorService
-
-  def AuthorService.add(lib)
-    print "Enter name: "
+  class << self
+  def add(lib)
+    print 'Enter name: '
     name = gets.chomp.strip
-    print "Enter biography: "
+    print 'Enter biography: '
     bio = gets.chomp.strip
 
-    if name == ""
-      puts "\n!- Fields can not be empty"
+    if name.empty?
+      puts '!- Fields can not be empty'
       return
     end
 
-    author = Author.new name, bio
-    if (lib.authors.select {|a| a.name == author.name}).length == 0
+    author = Author.new([name, bio])
+    if lib.authors.find {|a| a.name == author.name}
       lib.authors << author
-      puts "\n!- Author, was added"
+      puts '!- Author, was added'
     else
-      puts "\n!- Author, is already exits"
+      puts '!- Author, is already exits'
     end
   end
 
-  def AuthorService.show(lib)
+  def show(lib)
     authors = lib.authors
     authors.each do |author|
       puts author.to_s
     end
   end
 
-  def AuthorService.delete(lib)
-    print "Enter name: "
+  def delete(lib)
+    print 'Enter name: '
     name = gets.chomp.strip
 
     if lib.authors.delete_if {|author| author.name == name}
-      puts "\n!- Author was deleted\n"
+      puts '!- Author was deleted'
     else
-      puts "\n!- Author does not exits"
+      puts '!- Author does not exits'
     end
   end
 
   def AuthorService.show_books(lib)
-    print "Enter name: "
+    print 'Enter name: '
     name = gets.chomp.strip
 
     author_books = lib.books.select {|book| book.author.name = name}
@@ -52,8 +52,9 @@ module AuthorService
       end
 
     else
-      puts "\n!- Author, don`t have books yet"
+      puts '!- Author, don`t have books yet'
     end
+  end
   end
 
 end

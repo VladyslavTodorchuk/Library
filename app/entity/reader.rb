@@ -2,12 +2,12 @@
 class Reader
   attr_accessor :name ,:email, :city, :street, :house
 
-  def initialize(name, email, city, street, house)
-    @name = name
-    @email = email
-    @city = city
-    @street = street
-    @house = house
+  def initialize(params)
+    @name = params[:name]
+    @email = params[:email]
+    @city = params[:city]
+    @street = params[:street]
+    @house = params[:house]
   end
 
   def to_s
