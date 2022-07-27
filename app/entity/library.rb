@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'author'
 require_relative 'book'
 require_relative 'order'
@@ -6,7 +8,6 @@ require 'yaml'
 require 'date'
 
 class Library
-
   attr_accessor :authors, :books, :readers, :orders
 
   def print_instruction
@@ -32,6 +33,4 @@ class Library
     count_of_readers = books_hash[book]
     { book:, count_of_readers: }
   end
-
 end
-

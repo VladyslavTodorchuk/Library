@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Author
   attr_accessor :name, :biography
 
@@ -14,4 +16,3 @@ class Author
     @name == other.name && biography == other.biography if other.nil? || !other.instance_of?(Author)
   end
 end
-

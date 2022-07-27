@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './entity/reader'
 
 module ReaderService
@@ -18,7 +20,7 @@ module ReaderService
         return
       end
       reader = Reader.new([name, email, city, street, house])
-      if lib.readers.find {|r| r.email == reader.email}
+      if lib.readers.find { |r| r.email == reader.email }
         lib.readers << reader
         puts '!- Reader, was added'
       else
@@ -37,8 +39,8 @@ module ReaderService
       print 'Enter email: '
       email = gets.chomp.strip
 
-      if lib.orders.find {|o| o.reader.email == email}
-        if lib.readers.delete_if {|reader| reader.email == email}
+      if lib.orders.find { |o| o.reader.email == email }
+        if lib.readers.delete_if { |reader| reader.email == email }
           puts '!- Reader was deleted'
         else
           puts '!- Reader does not exits'
@@ -46,21 +48,20 @@ module ReaderService
       else
         puts '!- Can`t delete reader he has order'
       end
-
     end
 
     def show_books(lib)
       print 'Enter email: '
       email = gets.chomp.strip
 
-      lib.orders.select {|order| order.reader.email == email}.each do |order|
+      lib.orders.select { |order| order.reader.email == email }.each do |order|
         puts order
       end
     end
 
     def reader(lib, top_books, top_count = 1)
       top_books.each do |book, _v|
-        orders = lib.orders.select {|order| order.book == book}.first top_count
+        orders = lib.orders.select { |order| order.book == book }.first top_count
         puts book.to_s
         orders.each do |e|
           puts "\t |#{e.reader.name} #{e.reader.email}"
@@ -70,7 +71,7 @@ module ReaderService
 
     def most_popular_book(lib, top_count = 1)
       readers_hash = Hash.new(0)
-      lib.orders.each {|order| readers_hash[order.reader] += 1}
+      lib.orders.each { |order| readers_hash[order.reader] += 1 }
       readers_hash.first top_count
     end
   end

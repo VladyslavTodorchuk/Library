@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Order
   attr_accessor :book, :reader, :date
 
@@ -11,4 +13,3 @@ class Order
     "|Order| Book: #{@book.title} Reader: #{@reader.name} '#{@reader.email}' #{@date}"
   end
 end
-
