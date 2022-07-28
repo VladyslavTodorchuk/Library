@@ -1,1 +1,33 @@
-inherit_from: .rubocop_todo.yml
+AllCops:
+  Exclude:
+    - 'Gemfile'
+
+Metrics/AbcSize:
+  Max: 48
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 21
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'app/entity/author.rb'
+    - 'app/entity/book.rb'
+    - 'app/entity/library.rb'
+    - 'app/entity/order.rb'
+    - 'app/entity/reader.rb'
+    - 'app/services/author_service.rb'
+    - 'app/services/book_service.rb'
+    - 'app/services/library_service.rb'
+    - 'app/services/order_services.rb'
+    - 'app/services/reader_service.rb'
+
+Layout/LineLength:
+  Max: 156
+
+Metrics/PerceivedComplexity:
+  Max: 11

@@ -1,52 +1,52 @@
 --- !ruby/object:Library
 authors:
 - &1 !ruby/object:Author
-  name: Leontine Smitham
+  name: Vlad Todorchuk
   bio: Biography
 - &2 !ruby/object:Author
-  name: Sherri Wyman
+  name: Vlad Todorchuk
   bio: Biography
 - &3 !ruby/object:Author
-  name: Edith Jast
+  name: Vlad Todorchuk
   bio: Biography
 - &4 !ruby/object:Author
-  name: Doreatha Waters
+  name: Vlad Todorchuk
   bio: Biography
 - &5 !ruby/object:Author
-  name: Dinah Senger
+  name: Vlad Todorchuk
   bio: Biography
 - &6 !ruby/object:Author
-  name: Marget Howe
+  name: Vlad Todorchuk
   bio: Biography
 - &7 !ruby/object:Author
-  name: Keena Rosenbaum
+  name: Vlad Todorchuk
   bio: Biography
 - &8 !ruby/object:Author
-  name: Felipe Brekke
+  name: Vlad Todorchuk
   bio: Biography
 - &9 !ruby/object:Author
-  name: Issac Christiansen
+  name: Vlad Todorchuk
   bio: Biography
 - &10 !ruby/object:Author
-  name: Kasi Runolfsson
+  name: Vlad Todorchuk
   bio: Biography
 - &11 !ruby/object:Author
-  name: Hideo Kojima
+  name: Vlad Todorchuk
   bio: A God, a genius and just a good guy
 - &12 !ruby/object:Author
-  name: Albert Einstein
+  name: Vlad Todorchuk
   bio: Your school teacher
 - &13 !ruby/object:Author
-  name: Hideo Kojima
+  name: Vlad Todorchuk
   bio: A God, a genius and just a good guy
 - &14 !ruby/object:Author
-  name: Albert Einstein
+  name: Vlad Todorchuk
   bio: Your school teacher
 - &15 !ruby/object:Author
-  name: Hideo Kojima
+  name: Vlad Todorchuk
   bio: A God, a genius and just a good guy
 - &16 !ruby/object:Author
-  name: Albert Einstein
+  name: Vlad Todorchuk
   bio: Your school teacher
 books:
 - &17 !ruby/object:Book
@@ -555,8 +555,4 @@ orders:
 - !ruby/object:Order
   book: *62
   reader: *26
-  date: 2019-05-29
-- !ruby/object:Order
-  book: *25
-  reader: *63
   date: 2019-05-29
