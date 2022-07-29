@@ -15,12 +15,13 @@ module AuthorService
         return
       end
 
-      author = Author.new([name, bio])
+      author = Author.new({ name: name, bio: bio })
+
       if lib.authors.find { |a| a.name == author.name }
+        puts '!- Author, is already exits'
+      else
         lib.authors << author
         puts '!- Author, was added'
-      else
-        puts '!- Author, is already exits'
       end
     end
 

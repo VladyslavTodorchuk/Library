@@ -23,13 +23,13 @@ module OrderService
         puts '!- There is no such a book or author'
         return
       end
-      search_order = Order.new([book, reader, Date.parse(date.to_s)])
+      search_order = Order.new({ book: book, reader: reader, date: Date.parse(date.to_s) })
 
       if lib.orders.find { |order| order.reader.email == reader_email && order.book.title == book_title && order.book.author.name == author_name }
+        puts '!- Order is already exits'
+      else
         puts '!- Order, was added'
         lib.orders << search_order
-      else
-        puts '!- Order is already exits'
       end
     end
 

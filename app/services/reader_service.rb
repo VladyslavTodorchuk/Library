@@ -19,12 +19,12 @@ module ReaderService
         puts '!- Fields can not be empty'
         return
       end
-      reader = Reader.new([name, email, city, street, house])
+      reader = Reader.new({ name: name, email: email, city: city, street: street, house: house})
       if lib.readers.find { |r| r.email == reader.email }
+        puts '!- Reader, is already exits'
+      else
         lib.readers << reader
         puts '!- Reader, was added'
-      else
-        puts '!- Reader, is already exits'
       end
     end
 

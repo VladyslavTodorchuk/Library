@@ -16,7 +16,7 @@ module BookService
       end
 
       order_author = lib.authors.find { |a| a.name == name }
-      order_book = Book.new([title, author])
+      order_book = Book.new({ title: title, author: name })
       if lib.books.find { |book| book.title == order_book.title && book.author.name == order_author.name }
         lib.books << book
         puts '!- Book, was added'
