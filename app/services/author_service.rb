@@ -6,23 +6,16 @@ module AuthorService
   class << self
     def add(lib)
       print 'Enter name: '
-      name = gets.chomp.strip
+      author_name = gets.chomp.strip
       print 'Enter biography: '
-      bio = gets.chomp.strip
+      author_bio = gets.chomp.strip
+      return '!- Fields can not be empty' if author_name.empty?
 
-      if name.empty?
-        puts '!- Fields can not be empty'
-        return
-      end
+      new_author = Author.new(name: author_name, bio: author_bio)
+      return '!- Author, is already exits' if lib.authors.find { |a| a.name == new_author.name }
 
-      author = Author.new({ name: name, bio: bio })
-
-      if lib.authors.find { |a| a.name == author.name }
-        puts '!- Author, is already exits'
-      else
-        lib.authors << author
-        puts '!- Author, was added'
-      end
+      lib.authors << new_author
+      '!- Author, was added'
     end
 
     def show(lib)
@@ -34,28 +27,18 @@ module AuthorService
 
     def delete(lib)
       print 'Enter name: '
-      name = gets.chomp.strip
+      author_name = gets.chomp.strip
+      return '!- Author was deleted' if lib.authors.delete_if { |author| author.name == author_name }
 
-      if lib.authors.delete_if { |author| author.name == name }
-        puts '!- Author was deleted'
-      else
-        puts '!- Author does not exits'
-      end
+      '!- Author does not exits'
     end
 
-    def AuthorService.show_books(lib)
+    def self.show_books(lib)
       print 'Enter name: '
-      name = gets.chomp.strip
-
-      author_books = lib.books.select { |book| book.author.name = name }
-
-      if author_books.length.zero?
-        puts '!- Author, don`t have books yet'
-      else
-        author_books.each do |author_book|
-          puts author_book.to_s
-        end
-
+      author_name = gets.chomp.strip
+      author_books = lib.books.select { |book| book.author.name = author_name }
+      author_books.each do |author_book|
+        puts author_book.to_s
       end
     end
   end

@@ -13,6 +13,8 @@ class Book
   end
 
   def ==(other)
-    @title == other.title && @author == other.author if other.nil? || !other.instance_of?(Book)
+    return false if other.nil? || !other.instance_of?(Book)
+
+    @title == other.title && author == other.author
   end
 end

@@ -13,6 +13,8 @@ class Author
   end
 
   def ==(other)
-    @name == other.name && bio == other.bio if other.nil? || !other.instance_of?(Author)
+    return false if other.nil? || !other.instance_of?(Author)
+
+    @name == other.name && bio == other.bio
   end
 end

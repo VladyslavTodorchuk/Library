@@ -7,7 +7,8 @@ module LibraryService
     end
 
     def load
-      YAML.load_file('../storage/data.yml', permitted_classes: [Library, Author, Book, Reader, Order, Date], aliases: true)
+      YAML.load_file('../storage/data.yml', permitted_classes: [Library, Author, Book, Reader, Order, Date],
+                                            aliases: true)
     end
   end
 end

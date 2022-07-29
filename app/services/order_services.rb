@@ -5,57 +5,48 @@ require './entity/order'
 module OrderService
   class << self
     def add(lib)
-      puts '  Add Order'
       print 'Enter Reader email: '
       reader_email = gets.chomp.strip
-
       print 'Enter Book title: '
       book_title = gets.chomp.strip
-
       print 'Enter Author name: '
       author_name = gets.chomp.strip
+      order_book = lib.books.find { |b| b.title == book_title && b.author.name == author_name }
+      order_reader = lib.readers.find { |r| r.email == reader_email }
+      order_date = DateTime.now
 
-      book = lib.books.find { |b| b.title == book_title && b.author.name == author_name }
-      reader = lib.readers.find { |r| r.email == reader_email }
-      date = DateTime.now
+      return '!- There is no such a book or author' if order_book.nil? || order_reader.nil?
 
-      if book.nil? || reader.nil?
-        puts '!- There is no such a book or author'
-        return
-      end
-      search_order = Order.new({ book: book, reader: reader, date: Date.parse(date.to_s) })
+      new_order = Order.new(book: order_book, reader: order_reader, date: Date.parse(order_date.to_s))
+      return '!- Order is already exits' if lib.orders.find do |order|
+                                              order.reader.email == reader_email &&
+                                              order.book.title == book_title &&
+                                              order.book.author.name == author_name
+                                            end
 
-      if lib.orders.find { |order| order.reader.email == reader_email && order.book.title == book_title && order.book.author.name == author_name }
-        puts '!- Order is already exits'
-      else
-        puts '!- Order, was added'
-        lib.orders << search_order
-      end
+      lib.orders << new_order
+      '!- Order, was added'
     end
 
     def show(lib)
-      puts '  Orders'
       lib.orders.each do |order|
         puts order.to_s
       end
     end
 
     def delete(lib)
-      puts '  Delete Order'
       print 'Enter Reader email: '
       reader_email = gets.chomp.strip
-
       print 'Enter Book title: '
       book_title = gets.chomp.strip
-
       print 'Enter Author name: '
       author_name = gets.chomp.strip
+      return '!- Order was deleted' if lib.orders.delete_if do |o|
+                                         o.reader.email == reader_email &&
+                                         o.book.title == book_title && o.book.author.name == author_name
+                                       end
 
-      if lib.orders.delete_if { |o| o.reader.email == reader_email && o.book.title == book_title && o.book.author.name == author_name }
-        puts '!- Order was deleted'
-      else
-        puts '!- Order was not delete or is not exits'
-      end
+      '!- Order was not delete or is not exits'
     end
   end
 end
