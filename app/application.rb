@@ -11,12 +11,9 @@ private
 
 def process_book_command(command)
   case command
-  when 'show'
-    BookService.show @library
-  when 'add'
-    puts BookService.add @library
-  when 'delete'
-    puts BookService.delete @library
+  when 'show' then BookService.show @library
+  when 'add' then puts BookService.add @library
+  when 'delete' then puts BookService.delete @library
   else
     puts '!- Undefined command for this entity ("Book")'
   end
@@ -24,12 +21,9 @@ end
 
 def process_order_command(command)
   case command
-  when 'show'
-    OrderService.show @library
-  when 'add'
-    puts OrderService.add @library
-  when 'delete'
-    puts OrderService.delete @library
+  when 'show' then OrderService.show @library
+  when 'add' then  puts OrderService.add @library
+  when 'delete' then puts OrderService.delete @library
   else
     puts '!- Undefined command for this entity ("Order")'
   end
@@ -37,14 +31,10 @@ end
 
 def process_author_command(command)
   case command
-  when 'show'
-    AuthorService.show @library
-  when 'add'
-    puts AuthorService.add @library
-  when 'delete'
-    puts AuthorService.delete @library
-  when 'show books'
-    AuthorService.show_books @library
+  when 'show' then AuthorService.show @library
+  when 'add' then puts AuthorService.add @library
+  when 'delete' then puts AuthorService.delete @library
+  when 'show books' then  AuthorService.show_books @library
   else
     puts '!- Undefined command for this entity ("Author")'
   end
@@ -52,14 +42,10 @@ end
 
 def process_reader_command(command)
   case command
-  when 'show'
-    ReaderService.show @library
-  when 'add'
-    puts ReaderService.add @library
-  when 'delete'
-    puts ReaderService.delete @library
-  when 'show books'
-    ReaderService.show_books @library
+  when 'show' then ReaderService.show @library
+  when 'add' then puts ReaderService.add @library
+  when 'delete' then puts ReaderService.delete @library
+  when 'show books' then  ReaderService.show_books @library
   else
     puts '!- Undefined command for this entity ("Reader")'
   end

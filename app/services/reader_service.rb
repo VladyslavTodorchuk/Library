@@ -5,21 +5,8 @@ require './entity/reader'
 module ReaderService
   class << self
     def add(lib)
-      print 'Enter Name: '
-      reader_name = gets.chomp.strip
-      print 'Enter Email: '
-      reader_email = gets.chomp.strip
-      print 'Enter City: '
-      reader_city = gets.chomp.strip
-      print 'Enter Street and House'
-      reader_street = gets.chomp.strip
-      print 'Enter House: '
-      reader_house = gets.chomp.to_i
-      return '!- Fields can not be empty' if reader_name.empty? || reader_email.empty? || reader_city.empty? ||
-                                             reader_street.empty? || reader_house.negative?
-
-      reader = Reader.new(name: reader_name, email: reader_email, city: reader_city,
-                          street: reader_street, house: reader_house)
+      reader_data_hash = reader_data
+      reader = new_reader(reader_data_hash)
 
       return '!- Reader, is already exits' if lib.readers.find { |r| r.email == reader.email }
 
@@ -65,6 +52,27 @@ module ReaderService
       readers_hash = Hash.new(0)
       lib.orders.each { |order| readers_hash[order.reader] += 1 }
       readers_hash.first top_count
+    end
+
+    private
+
+    def reader_data
+      print 'Enter Name and Email: '
+      reader_name, reader_email = gets.chomp.strip.split(' ')
+      print 'Enter City and Street: '
+      reader_city, reader_street = gets.chomp.strip.split(' ')
+      print 'Enter House: '
+      reader_house = gets.chomp.to_i
+      { reader_name:, reader_email:, reader_city:, reader_street:, reader_house: }
+    end
+
+    def new_reader(reader_hash)
+      return nil if reader_hash[:reader_name].empty? || reader_hash[:reader_email].empty? ||
+                    reader_hash[:reader_city].empty? || reader_hash[:reader_street].empty? ||
+                    reader_hash[:reader_house].negative?
+
+      Reader.new(name: reader_hash[:reader_name], email: reader_hash[:reader_email], city: reader_hash[:reader_city],
+                 street: reader_hash[:reader_street], house: reader_hash[:reader_house])
     end
   end
 end

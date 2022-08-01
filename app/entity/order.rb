@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Order
-  attr_accessor :book, :reader, :date
+  attr_reader :book, :reader, :date
 
   def initialize(params)
     @book = params[:book]

@@ -8,7 +8,7 @@ require 'yaml'
 require 'date'
 
 class Library
-  attr_accessor :authors, :books, :readers, :orders
+  attr_reader :authors, :books, :readers, :orders
 
   def print_instruction
     puts '(Write command by typing <entity, command>)  Chose action:'

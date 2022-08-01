@@ -5,15 +5,11 @@ require './entity/book'
 module BookService
   class << self
     def add(lib)
-      print 'Enter Title: '
-      book_title = gets.chomp.strip
-      print 'Enter Author name: '
-      author_name = gets.chomp.strip
+      book_data_hash = book_data
 
-      return '!- Fields can not be empty' if book_title.empty? || author_name.empty?
+      new_book = new_book(book_data_hash[:author_name], book_data_hash[:book_title], lib)
+      return 'Files can be empty' if new_book.nil?
 
-      book_author = lib.authors.find { |a| a.name == author_name }
-      new_book = Book.new(title: book_title, author: book_author)
       '!- Book, is already exits' unless lib.books.find do |book|
                                            book.title == new_book.title && book.author.name == new_book.name
                                          end
@@ -30,12 +26,10 @@ module BookService
     end
 
     def BookService.delete(lib)
-      print 'Enter Title: '
-      book_title = gets.chomp.strip
-      print 'Enter Author name: '
-      book_name = gets.chomp.strip
+      book_data_hash = book_data
       return '!- Book does not exits' if lib.books.delete_if do |book|
-                                           book.title == book_title && book.author.name == book_name
+                                           book.title == book_data_hash[:book_title] &&
+                                           book.author.name == book_data_hash[:book_name]
                                          end
 
       '!- Book was deleted'
@@ -49,6 +43,23 @@ module BookService
       else
         books_hash.sort_by { |_book, number| -number }.first(top_count)
       end
+    end
+
+    private
+
+    def book_data
+      print 'Enter Title: '
+      book_title = gets.chomp.strip
+      print 'Enter Author name: '
+      author_name = gets.chomp.strip
+      { book_title:, author_name: }
+    end
+
+    def new_book(author_name, book_title, lib)
+      return nil if book_title.empty? || :author_name.empty?
+
+      book_author = lib.authors.find { |a| a.name == author_name }
+      Book.new(title: book_title, author: book_author)
     end
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Reader
-  attr_accessor :name, :email, :city, :street, :house
+  attr_reader :name, :email, :city, :street, :house
 
   def initialize(params)
     @name = params[:name]

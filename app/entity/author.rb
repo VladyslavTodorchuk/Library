@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Author
-  attr_accessor :name, :bio
+  attr_reader :name, :bio
 
   def initialize(params)
     @name = params[:name]
