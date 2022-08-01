@@ -58,7 +58,8 @@ module ReaderService
 
     def reader_data
       print 'Enter Name and Email: '
-      reader_name, reader_email = gets.chomp.strip.split(' ')
+      reader_name = gets.chomp.strip
+      reader_email = gets.chomp.strip
       print 'Enter City and Street: '
       reader_city, reader_street = gets.chomp.strip.split(' ')
       print 'Enter House: '
