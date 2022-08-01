@@ -4,43 +4,43 @@ require './entity/reader'
 
 module ReaderService
   class << self
-    def add(lib)
+    def add(library)
       reader_data_hash = reader_data
       reader = new_reader(reader_data_hash)
 
-      return '!- Reader, is already exits' if lib.readers.find { |r| r.email == reader.email }
+      return '!- Reader, is already exits' if library.readers.find { |r| r.email == reader.email }
 
-      lib.readers << reader
+      library.readers << reader
       '!- Reader, was added'
     end
 
-    def show(lib)
-      readers = lib.readers
+    def show(library)
+      readers = library.readers
       readers.each do |reader|
         puts reader.to_s
       end
     end
 
-    def delete(lib)
+    def delete(library)
       print 'Enter email: '
       reader_email = gets.chomp.strip
-      return '!- Reader was deleted' if lib.readers.delete_if { |reader| reader.email == reader_email }
-      return '!- Reader does not exits' unless lib.readers.delete_if { |reader| reader.email == reader_email }
+      return '!- Reader was deleted' if library.readers.delete_if { |reader| reader.email == reader_email }
+      return '!- Reader does not exits' unless library.readers.delete_if { |reader| reader.email == reader_email }
 
       '!- Can`t delete reader he has order'
     end
 
-    def show_books(lib)
+    def show_books(library)
       print 'Enter email: '
       reader_email = gets.chomp.strip
-      lib.orders.select { |order| order.reader.email == reader_email }.each do |order|
+      library.orders.select { |order| order.reader.email == reader_email }.each do |order|
         puts order
       end
     end
 
-    def reader(lib, top_books, top_count = 1)
+    def reader(library, top_books, top_count = 1)
       top_books.each do |book, _v|
-        orders = lib.orders.select { |order| order.book == book }.first(top_count)
+        orders = library.orders.select { |order| order.book == book }.first(top_count)
         puts book.to_s
         orders.each do |e|
           puts "\t |#{e.reader.name} #{e.reader.email}"
@@ -48,9 +48,9 @@ module ReaderService
       end
     end
 
-    def most_popular_book(lib, top_count = 1)
+    def most_popular_book(library, top_count = 1)
       readers_hash = Hash.new(0)
-      lib.orders.each { |order| readers_hash[order.reader] += 1 }
+      library.orders.each { |order| readers_hash[order.reader] += 1 }
       readers_hash.first top_count
     end
 

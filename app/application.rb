@@ -71,8 +71,7 @@ until is_exit
 
   when 'author' then process_author_command(commands[1])
 
-  when 'statistics'
-    @library.print_statistics
+  when 'statistics' then @library.print_statistics
 
   when 'exit'
     LibraryService.save @library

@@ -4,30 +4,30 @@ require './entity/book'
 
 module BookService
   class << self
-    def add(lib)
+    def add(library)
       book_data_hash = book_data
 
-      new_book = new_book(book_data_hash[:author_name], book_data_hash[:book_title], lib)
+      new_book = new_book(book_data_hash[:author_name], book_data_hash[:book_title], library)
       return 'Files can be empty' if new_book.nil?
 
-      '!- Book, is already exits' unless lib.books.find do |book|
+      '!- Book, is already exits' unless library.books.find do |book|
                                            book.title == new_book.title && book.author.name == new_book.name
                                          end
 
-      lib.books << new_book
+      library.books << new_book
       '!- Book, was added'
     end
 
-    def show(lib)
-      books = lib.books
+    def show(library)
+      books = library.books
       books.each do |book|
         puts book.to_s
       end
     end
 
-    def BookService.delete(lib)
+    def BookService.delete(library)
       book_data_hash = book_data
-      return '!- Book does not exits' if lib.books.delete_if do |book|
+      return '!- Book does not exits' if library.books.delete_if do |book|
                                            book.title == book_data_hash[:book_title] &&
                                            book.author.name == book_data_hash[:book_name]
                                          end
@@ -35,9 +35,9 @@ module BookService
       '!- Book was deleted'
     end
 
-    def top_popular_book(lib, top_count = 3)
+    def top_popular_book(library, top_count = 3)
       books_hash = Hash.new(0)
-      lib.orders.each { |order| books_hash[order.book] += 1 }
+      library.orders.each { |order| books_hash[order.book] += 1 }
       if books_hash.length.zero?
         {}
       else
@@ -55,10 +55,10 @@ module BookService
       { book_title:, author_name: }
     end
 
-    def new_book(author_name, book_title, lib)
-      return nil if book_title.empty? || :author_name.empty?
+    def new_book(author_name, book_title, library)
+      return nil if book_title.empty? || author_name.empty?
 
-      book_author = lib.authors.find { |a| a.name == author_name }
+      book_author = library.authors.find { |a| a.name == author_name }
       Book.new(title: book_title, author: book_author)
     end
   end

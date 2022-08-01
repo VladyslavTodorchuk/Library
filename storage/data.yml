@@ -359,6 +359,12 @@ readers:
   city: Mannshire
   street: Lilian River
   house: 11
+- &68 !ruby/object:Reader
+  name: Vladik Todorchuk
+  email: vladik.todorchuk@code.org
+  city: Lviv
+  street: Lubinska
+  house: 4
 orders:
 - !ruby/object:Order
   book: *18
@@ -560,3 +566,7 @@ orders:
   book: *26
   reader: *64
   date: 2019-05-29
+- !ruby/object:Order
+  book: *18
+  reader: *68
+  date: 2022-08-01
