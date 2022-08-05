@@ -1,0 +1,15 @@
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'app/entity/author.rb'
+    - 'app/entity/book.rb'
+    - 'app/entity/library.rb'
+    - 'app/entity/order.rb'
+    - 'app/entity/reader.rb'
+    - 'app/services/author_service.rb'
+    - 'app/services/book_service.rb'
+    - 'app/services/library_service.rb'
+    - 'app/services/order_services.rb'
+    - 'app/services/reader_service.rb'

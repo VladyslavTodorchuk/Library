@@ -1,38 +1,83 @@
+# frozen_string_literal: true
+
 require '../app/services/author_service'
+require '../app/services/library_service'
+require '../app/services/book_service'
+require '../app/services/reader_service'
+require '../app/services/order_services'
+require_relative './entity/library'
 
+private
 
-class Library
-
-  attr_accessor :authors, :books, :readers, :orders
-
-  def initialize
-
+def process_book_command(command)
+  case command
+  when 'show' then BookService.show @library
+  when 'add' then puts BookService.add @library
+  when 'delete' then puts BookService.delete @library
+  else
+    puts '!- Undefined command for this entity ("Book")'
   end
+end
 
-  def find_top_reader
-
+def process_order_command(command)
+  case command
+  when 'show' then OrderService.show @library
+  when 'add' then  puts OrderService.add @library
+  when 'delete' then puts OrderService.delete @library
+  else
+    puts '!- Undefined command for this entity ("Order")'
   end
+end
 
-  def find_most_popular_book
-
+def process_author_command(command)
+  case command
+  when 'show' then AuthorService.show @library
+  when 'add' then puts AuthorService.add @library
+  when 'delete' then puts AuthorService.delete @library
+  when 'show books' then  AuthorService.show_books @library
+  else
+    puts '!- Undefined command for this entity ("Author")'
   end
+end
 
-  def get_number_of_readers_of_most_popular_book
-
+def process_reader_command(command)
+  case command
+  when 'show' then ReaderService.show @library
+  when 'add' then puts ReaderService.add @library
+  when 'delete' then puts ReaderService.delete @library
+  when 'show books' then  ReaderService.show_books @library
+  else
+    puts '!- Undefined command for this entity ("Reader")'
   end
+end
 
-  def self.print_instruction
+@library = LibraryService.load
+puts '    Welcome to Library App'
+is_exit = false
 
-    puts "(Write command by typing <entity, command>) \n Chose action:"
-    puts "\t\nAuthor\n1) Add \n2) Show \n3) Show Books \n4) Delete"
+until is_exit
 
-    puts "\t\nBook\n1) Add \n2) Show \n3) Show most popular books \n4) Delete"
+  @library.print_instruction
+  print ' Enter command: '
+  action = gets.chop.downcase
+  commands = action.split(', ')
 
-    puts "\t\nReader\n1) Add \n2) Show \n3) Show Reader's books \n4) Delete"
+  case commands[0]
+  when 'book' then process_book_command(commands[1])
 
-    puts "\t\nOrder\n1) Add \n2) Show \n3) Delete Order"
+  when 'reader' then process_reader_command(commands[1])
 
-    puts "\nWrite 'Exit' to finish"
+  when 'order' then process_order_command(commands[1])
 
+  when 'author' then process_author_command(commands[1])
+
+  when 'statistics' then @library.print_statistics
+
+  when 'exit'
+    LibraryService.save @library
+    is_exit = true
+    puts 'Bye'
+  else
+    puts '!- Wrong COMMAND'
   end
 end
